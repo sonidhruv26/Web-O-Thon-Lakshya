@@ -1,0 +1,110 @@
+<html>
+    <head>
+        <script>
+           
+            var countDownDate = new Date("May 1, 2023 00:00:00").getTime();
+           
+           
+            var x = setInterval(function() {
+   
+             
+              var now = new Date().getTime();
+   
+               
+              var distance = countDownDate - now;
+   
+             
+              var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+              var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+              var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+              var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+   
+             
+              document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+              + minutes + "m " + seconds + "s ";
+   
+             
+              if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "EXPIRED";
+              }
+            }, 1000);
+        </script>
+   
+        <link rel="stylesheet" href="style.css">
+        <title>Servies</title>
+    </head>
+    <body>
+        <div class="top">
+            <h1 id="main"><span style="color: rgb(213 85 48);">LAKSHYA</span> 2023</h1>
+            <ul class="ul">
+                <li>Home</li>
+                <li><a href="/Users/harshgohel/Desktop/FrontEnd/HTML/website-2/web2About.html">About</a></li>
+                <li class="active"><a href="/Users/harshgohel/Desktop/FrontEnd/HTML/website-2/web2Services.html">More Events</a></li>
+            </ul>
+        </div>
+        <aside class="newsletter" style="height: 13%;">
+            <div class="container">
+                <p>Enter Email for more event Updates</p>
+                <form>
+                <input for="email" type="email" required placeholder="Enter Email " style="text-align:  center;">
+                <button type="submit" id="email" value="Subscribe"><span style="color: white;">
+                    submit</span></button>
+                </form>
+            </div>
+        </aside>
+        <div class="ser">
+            <div class="services">
+                <p><b style="color: black;font-size: 30px;margin-left: 40%;">Web-o-thon</b></p>
+                <div class="box">
+                    <h1>Countdown Timer</h1>
+<p>Countdown to May 1, 2023:</p>
+<p id="countdown"></p>
+
+                </div>
+               
+            </div>
+            <div class="quote">
+                <p><b>Registration Form</b></p>
+                <form>
+                    <table>
+                        <tr>
+                            <td>
+                                <label class="la" for="name">Name</label>
+                            </td>
+                            <td>
+                                <input type="text" id="name" style="text-align:  center;" name="name"
+                                placeholder="Enter your name" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="la" for="email">Email</label>
+                            </td>
+                            <td>
+                                <input type="email" style="text-align:  center;" id="email" name="email"
+                                placeholder="Enter your email" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="la" for="msg">Event</label>
+                            </td>
+                            <td>
+                                <input type="text" style="text-align:  center;" id="msg" name="msg"
+                                placeholder="Enter the event name">
+                            </td>
+                        </tr>
+                    </table><br>
+                    <div class="sub">
+                    <button type="submit" id="submit" name="submit"
+                    style="text-align: center;">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="bottom">
+            <p id="bp">LD College Of Engineering</p>
+        </div>
+    </body>
+    </html>
